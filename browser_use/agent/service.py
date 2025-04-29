@@ -388,6 +388,7 @@ class Agent(Generic[Context]):
 
 	def add_new_task(self, new_task: str) -> None:
 		self._message_manager.add_new_task(new_task)
+		self.task = new_task
 
 	async def _raise_if_stopped_or_paused(self) -> None:
 		"""Utility function that raises an InterruptedError if the agent is stopped or paused."""
