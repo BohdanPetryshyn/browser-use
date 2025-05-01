@@ -775,6 +775,11 @@
       return true;
     }
 
+    // If element is a Monaco editor textarea, it is always top
+    if (element.className === 'inputarea monaco-mouse-cursor-text') {
+      return true;
+    }
+
     // For shadow DOM, we need to check within its own root context
     const shadowRoot = element.getRootNode();
     if (shadowRoot instanceof ShadowRoot) {
